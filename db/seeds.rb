@@ -8,7 +8,7 @@ body = Body.create(
   site_id: site.id
 )
 
-BodyProperty.create(
+BodyStyle.create(
   background_repeat: "repeat",
   background_attachment: "fixed",
   background_size: "30px 10px",
@@ -22,7 +22,7 @@ header = Header.create(
   site_id: site.id
 )
 
-HeaderProperty.create(
+HeaderStyle.create(
   border_bottom_color: "black",
   border_bottom_style:"solid",
   border_bottom_width:6,
@@ -37,7 +37,7 @@ footer = Footer.create(
   site_id: site.id
 )
 
-FooterProperty.create(
+FooterStyle.create(
   border_top_color:"black",
   border_top_style:"solid",
   border_top_width:6,
@@ -71,7 +71,7 @@ section1 = Section.create(
   site_id: site.id
 )
 
-SectionProperty.create(
+SectionStyle.create(
   border_top_color:"green",
   border_bottom_color:"green",
   border_top_style:"dotted",
@@ -96,7 +96,7 @@ section2 = Section.create(
   site_id: site.id
 )
 
-SectionProperty.create(
+SectionStyle.create(
   border_top_color:"purple",
   border_bottom_color:"purple",
   border_top_style:"dotted",
@@ -121,7 +121,7 @@ textElement1 = Element.create(
   tag: "p"
 )
 
-ElementProperty.create(
+ElementStyle.create(
   border_top_color: "blue",
   border_right_color: "blue",
   border_bottom_color: "blue",
@@ -159,7 +159,7 @@ imageElement1 = Element.create(
   src:"https://www.w3schools.com/css/img_tree.gif"
 )
 
-ElementProperty.create(
+ElementStyle.create(
   border_top_color: "blue",
   border_right_color: "blue",
   border_bottom_color: "blue",
@@ -192,7 +192,7 @@ textElement2 = Element.create(
   tag: "p"
 )
 
-ElementProperty.create(
+ElementStyle.create(
   border_top_color: "green",
   border_right_color: "green",
   border_bottom_color: "green",
@@ -230,7 +230,7 @@ imageElement2 = Element.create(
   src:"https://www.w3schools.com/css/img_tree.gif"
 )
 
-ElementProperty.create(
+ElementStyle.create(
   border_top_color: "green",
   border_right_color: "green",
   border_bottom_color: "green",

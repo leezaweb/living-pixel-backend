@@ -1,6 +1,6 @@
-class CreateFooterProperties < ActiveRecord::Migration[5.2]
+class CreateFooterStyles < ActiveRecord::Migration[5.2]
   def change
-    create_table :footer_properties do |t|
+    create_table :footer_styles do |t|
       t.references :footer
       t.string :border_top_color
       t.string :border_top_style

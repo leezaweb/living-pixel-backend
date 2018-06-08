@@ -1,6 +1,6 @@
-class CreateElementProperties < ActiveRecord::Migration[5.2]
+class CreateElementStyles < ActiveRecord::Migration[5.2]
   def change
-    create_table :element_properties do |t|
+    create_table :element_styles do |t|
       t.references :element
       t.string :border_top_color
       t.string :border_right_color

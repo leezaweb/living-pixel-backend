@@ -6,7 +6,7 @@ class Api::V1::SectionSerializer < ActiveModel::Serializer
   # has_many :section_elements, serializer: SectionElementSerializer
 
 
-  attributes :id, :sequence, :section_property
+  attributes :id, :sequence, :section_style
 
     attribute :elements do
       elements = Element.joins(section_elements: :section).where("section_elements.section_id=?",object.id)
@@ -14,8 +14,8 @@ class Api::V1::SectionSerializer < ActiveModel::Serializer
       elements.map do |element|
       element_attributes = element.attributes
 
-      properties = ElementProperty.joins(:element).where("element_properties.element_id=?",element.id)[0]
-      element_attributes["element_property"] = properties
+      styles = ElementStyle.joins(:element).where("element_styles.element_id=?",element.id)[0]
+      element_attributes["element_style"] = styles
       element_attributes
     end
   end

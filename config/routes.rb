@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :body_properties
+      resources :body_styles
       resources :body
-      resources :element_properties
+      resources :element_styles
       resources :elements
-      resources :footer_properties
+      resources :footer_styles
       resources :footers
-      resources :header_properties
+      resources :header_styles
       resources :headers
-      resources :section_properties
+      resources :section_styles
       resources :sections
       resources :sites
       resources :teams

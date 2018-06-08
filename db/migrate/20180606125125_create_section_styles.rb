@@ -1,6 +1,6 @@
-class CreateSectionProperties < ActiveRecord::Migration[5.2]
+class CreateSectionStyles < ActiveRecord::Migration[5.2]
   def change
-    create_table :section_properties do |t|
+    create_table :section_styles do |t|
       t.references :section
       t.string :border_top_color
       t.string :border_bottom_color

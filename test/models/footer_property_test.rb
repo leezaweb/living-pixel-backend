@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FooterPropertyTest < ActiveSupport::TestCase
+class FooterStyleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

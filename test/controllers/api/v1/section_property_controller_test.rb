@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::V1::SectionPropertyControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::SectionStyleControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

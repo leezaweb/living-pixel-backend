@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.index ["site_id"], name: "index_bodies_on_site_id"
   end
 
-  create_table "body_properties", force: :cascade do |t|
+  create_table "body_styles", force: :cascade do |t|
     t.bigint "body_id"
     t.string "background_color"
     t.string "background_image"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.string "background_attachment"
     t.string "background_size"
     t.string "background_position"
-    t.index ["body_id"], name: "index_body_properties_on_body_id"
+    t.index ["body_id"], name: "index_body_styles_on_body_id"
   end
 
-  create_table "element_properties", force: :cascade do |t|
+  create_table "element_styles", force: :cascade do |t|
     t.bigint "element_id"
     t.string "border_top_color"
     t.string "border_right_color"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.string "background_attachment"
     t.string "background_size"
     t.string "background_position"
-    t.index ["element_id"], name: "index_element_properties_on_element_id"
+    t.index ["element_id"], name: "index_element_styles_on_element_id"
   end
 
   create_table "elements", force: :cascade do |t|
@@ -78,14 +78,14 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.string "src"
   end
 
-  create_table "footer_properties", force: :cascade do |t|
+  create_table "footer_styles", force: :cascade do |t|
     t.bigint "footer_id"
     t.string "border_top_color"
     t.string "border_top_style"
     t.integer "border_top_width"
     t.string "background_color"
     t.string "color"
-    t.index ["footer_id"], name: "index_footer_properties_on_footer_id"
+    t.index ["footer_id"], name: "index_footer_styles_on_footer_id"
   end
 
   create_table "footers", force: :cascade do |t|
@@ -94,14 +94,14 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.index ["site_id"], name: "index_footers_on_site_id"
   end
 
-  create_table "header_properties", force: :cascade do |t|
+  create_table "header_styles", force: :cascade do |t|
     t.bigint "header_id"
     t.string "border_bottom_color"
     t.string "border_bottom_style"
     t.integer "border_bottom_width"
     t.string "background_color"
     t.string "color"
-    t.index ["header_id"], name: "index_header_properties_on_header_id"
+    t.index ["header_id"], name: "index_header_styles_on_header_id"
   end
 
   create_table "headers", force: :cascade do |t|
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.index ["section_id"], name: "index_section_elements_on_section_id"
   end
 
-  create_table "section_properties", force: :cascade do |t|
+  create_table "section_styles", force: :cascade do |t|
     t.bigint "section_id"
     t.string "border_top_color"
     t.string "border_bottom_color"
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.string "display"
     t.string "justify_content"
     t.string "align_content"
-    t.index ["section_id"], name: "index_section_properties_on_section_id"
+    t.index ["section_id"], name: "index_section_styles_on_section_id"
   end
 
   create_table "sections", force: :cascade do |t|

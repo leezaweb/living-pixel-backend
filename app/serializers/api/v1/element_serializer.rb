@@ -1,6 +1,6 @@
 class Api::V1::ElementSerializer < ActiveModel::Serializer
-  has_one :element_property, serializer: ElementPropertySerializer
-  attributes :tag, :inner_text, :src, :element_property
+  has_one :element_style, serializer: ElementStyleSerializer
+  attributes :tag, :inner_text, :src, :element_style
   attribute :yo do
     "hello element"
   end

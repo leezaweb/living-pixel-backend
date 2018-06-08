@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BodyPropertyTest < ActiveSupport::TestCase
+class BodyStyleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

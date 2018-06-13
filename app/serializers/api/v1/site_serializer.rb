@@ -12,7 +12,7 @@ class Api::V1::SiteSerializer < ActiveModel::Serializer
   # has_one :header_style, through: :header
   # has_one :footer_style, through: :footer
 
-  has_many :teams, serializer: TeamSerializer
+  # has_many :teams, serializer: TeamSerializer
   has_many :sections, serializer: SectionSerializer
   has_one :body, serializer: BodySerializer
   has_one :header, serializer: HeaderSerializer

@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       resources :sites
       resources :teams
       resources :users
-
     end
   end
 end

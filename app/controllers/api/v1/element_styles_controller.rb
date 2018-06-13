@@ -13,10 +13,12 @@ class Api::V1::ElementStylesController < ApplicationController
     element_style = ElementStyle.find(params[:id])
 
     params.reject{|k|["controller", "action","id","element_style","editorState"].include?(k)}.each do |k,v|
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{k}"
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{v}"
-      element_style[k] = v
-      element_style.save
+      if k.include?("grid_column_start")
+        element_style[k] = params[k]
+      else
+        element_style[k] = params[k]
+        element_style.save
+      end
     end
 
     if params[:name] && params[:value]

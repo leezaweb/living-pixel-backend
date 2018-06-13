@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_06_125131) do
+ActiveRecord::Schema.define(version: 2018_06_13_172715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.integer "border_top_right_radius"
     t.integer "border_bottom_left_radius"
     t.integer "border_bottom_right_radius"
-    t.string "width"
-    t.string "height"
     t.string "filter"
     t.string "object_fit"
     t.string "text_align"
@@ -135,7 +133,6 @@ ActiveRecord::Schema.define(version: 2018_06_06_125131) do
     t.string "background_attachment"
     t.string "background_size"
     t.string "background_position"
-    t.string "display"
     t.string "justify_content"
     t.string "align_content"
     t.index ["section_id"], name: "index_section_styles_on_section_id"

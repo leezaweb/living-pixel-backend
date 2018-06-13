@@ -12,8 +12,15 @@ class Api::V1::SectionStylesController < ApplicationController
     params.reject{|k|["controller", "action","id","section_style","editorState"].include?(k)}.each do |k,v|
       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{k}"
       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{v}"
+
       section_style[k] = v
       section_style.save
     end
+
+    if params.keys.include?("background_repeat")
+     section_style.background_size=""
+     section_style.save
+    end
+
   end
 end

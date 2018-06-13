@@ -18,7 +18,7 @@ BodyStyle.create(
 )
 
 header = Header.create(
-  inner_text:"My Site Header",
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":7,"length":4,"style":"BOLD"},{"offset":0,"length":11,"style":"CODE"},{"offset":0,"length":6,"style":"ITALIC"}],"entityRanges":[]}]}',
   site_id: site.id
 )
 
@@ -33,7 +33,7 @@ HeaderStyle.create(
 )
 
 footer = Footer.create(
-  inner_text:"My Site Footer",
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Footer","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":7,"length":4,"style":"BOLD"},{"offset":0,"length":11,"style":"CODE"},{"offset":0,"length":6,"style":"ITALIC"}],"entityRanges":[]}]}',
   site_id: site.id
 )
 
@@ -117,7 +117,7 @@ SectionStyle.create(
 )
 
 textElement1 = Element.create(
-  inner_text: "PARAGRAPH1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  inner_text: '{"entityMap":{},"blocks":[{"key":"4oah6","text":"Enter Text...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":7,"length":4,"style":"BOLD"},{"offset":0,"length":11,"style":"CODE"},{"offset":0,"length":6,"style":"ITALIC"}],"entityRanges":[]}]}',
   tag: "p"
 )
 
@@ -138,8 +138,6 @@ ElementStyle.create(
   border_top_right_radius: 24,
   border_bottom_left_radius: 24,
   border_bottom_right_radius: 24,
-  width: "auto",
-  height: "auto",
   text_align: "right",
   color: "brown",
   column_gap: 12,
@@ -148,9 +146,9 @@ ElementStyle.create(
   column_rule_style: "solid",
   column_rule_color: "grey",
   grid_column_start: 1,
-  grid_column_end: 9,
+  grid_column_end: 6,
   grid_row_start: 1,
-  grid_row_end: 3,
+  grid_row_end: 2,
   element_id:textElement1.id
 )
 
@@ -176,19 +174,17 @@ ElementStyle.create(
   border_top_right_radius: 24,
   border_bottom_left_radius: 24,
   border_bottom_right_radius: 24,
-  width: "200px",
-  height: "400px",
   filter: "sepia(100%)",
   object_fit: "cover",
   grid_column_start: 10,
   grid_column_end: 13,
-  grid_row_start: 1,
-  grid_row_end: 2,
+  grid_row_start: 0,
+  grid_row_end: 1,
   element_id:imageElement1.id
 )
 
 textElement2 = Element.create(
-  inner_text: "PARAGRAPH2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  inner_text: '{"entityMap":{},"blocks":[{"key":"4oah6","text":"Enter Text...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":7,"length":4,"style":"BOLD"},{"offset":0,"length":11,"style":"CODE"},{"offset":0,"length":6,"style":"ITALIC"}],"entityRanges":[]}]}',
   tag: "p"
 )
 
@@ -209,8 +205,6 @@ ElementStyle.create(
   border_top_right_radius: 24,
   border_bottom_left_radius: 24,
   border_bottom_right_radius: 24,
-  width: "auto",
-  height: "auto",
   text_align: "right",
   color: "brown",
   column_gap: 12,
@@ -218,10 +212,10 @@ ElementStyle.create(
   column_rule_width: 3,
   column_rule_style: "solid",
   column_rule_color: "grey",
-  grid_column_start: 3,
-  grid_column_end: 12,
+  grid_column_start: 1,
+  grid_column_end: 6,
   grid_row_start: 1,
-  grid_row_end: 3,
+  grid_row_end: 2,
   element_id:textElement2.id
 )
 
@@ -247,14 +241,12 @@ ElementStyle.create(
   border_top_right_radius: 24,
   border_bottom_left_radius: 24,
   border_bottom_right_radius: 24,
-  width: "200px",
-  height: "400px",
   filter: "blur(3px)",
   object_fit: "cover",
-  grid_column_start: 1,
-  grid_column_end: 3,
-  grid_row_start: 1,
-  grid_row_end: 2,
+  grid_column_start: 10,
+  grid_column_end: 13,
+  grid_row_start: 0,
+  grid_row_end: 1,
   element_id:imageElement2.id
 )
 

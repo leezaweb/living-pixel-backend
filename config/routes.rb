@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :footers
       resources :header_styles
       resources :headers
+      resources :section_elements
       resources :section_styles
       resources :sections
       resources :sites

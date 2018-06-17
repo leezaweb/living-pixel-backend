@@ -10,17 +10,13 @@ class Api::V1::SectionStylesController < ApplicationController
   def update
     section_style = SectionStyle.find(params[:id])
     params.reject{|k|["controller", "action","id","section_style","editorState"].include?(k)}.each do |k,v|
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{k}"
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{v}"
-
-      section_style[k] = v
+      if k.include?("border") && k.include?("style") && params[k]=="none"
+        section_style[k.sub("style","width")]=0
+      end
+      section_style.background_size="" if k.include?("background_repeat") && params[k]=="repeat"
+      section_style[k] = params[k]
       section_style.save
     end
-
-    if params.keys.include?("background_repeat")
-     section_style.background_size=""
-     section_style.save
-    end
-
   end
+  
 end

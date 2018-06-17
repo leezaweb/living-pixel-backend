@@ -1,4 +1,29 @@
 class Api::V1::SectionsController < ApplicationController
+  def create
+    puts "%%%%%%%%%#{params}%%%%%%%%%%"
+    case params[:title]
+      when "Blank Section"
+        puts "%%%%%%%%%#{params[:title]}%%%%%%%%%%"
+        # byebug
+        section_sequence = Section.find(params[:section].to_i).sequence - 1
+        new_section = Section.create(sequence:section_sequence,site_id:params[:site])
+
+        new_style = SectionStyle.create(section_id:new_section.id)
+
+        new_style.attributes.reject{|k|["id", "section_id"].include?(k)}.each do |attribute|
+
+          if attribute[0].include?("width") || attribute[0].include?("radius")
+            new_style[attribute[0]] = 0
+            new_style.save
+          else
+            new_style[attribute[0]] = ""
+            new_style.save
+          end
+      end
+    end
+  end
+
+
   def index
     element_style_ids = ElementStyle.all.map{|x|x.element_id}
     Element.all.each do |y|

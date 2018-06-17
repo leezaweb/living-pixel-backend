@@ -13,20 +13,12 @@ class Api::V1::ElementStylesController < ApplicationController
     element_style = ElementStyle.find(params[:id])
 
     params.reject{|k|["controller", "action","id","element_style","editorState"].include?(k)}.each do |k,v|
-      if k.include?("grid_column_start")
-        element_style[k] = params[k]
-      else
-        element_style[k] = params[k]
-        element_style.save
+      if k.include?("border") && k.include?("style") && params[k]=="none"
+        element_style[k.sub("style","width")]=0
       end
+      element_style.background_size="" if k.include?("background_repeat") && params[k]=="repeat"
+      element_style[k] = params[k]
+      element_style.save
     end
-
-    if params[:name] && params[:value]
-      element_style[params[:name]] = params[:value]
-    end
-
-    element_style.save!
-    puts element_style.inspect
   end
-
 end

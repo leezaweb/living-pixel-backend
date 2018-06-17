@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_172715) do
+ActiveRecord::Schema.define(version: 2018_06_17_203720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_172715) do
     t.text "inner_text"
     t.string "tag"
     t.string "src"
+    t.string "key"
   end
 
   create_table "footer_styles", force: :cascade do |t|
@@ -141,6 +142,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_172715) do
   create_table "sections", force: :cascade do |t|
     t.bigint "site_id"
     t.integer "sequence"
+    t.string "key"
     t.index ["site_id"], name: "index_sections_on_site_id"
   end
 

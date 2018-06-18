@@ -1,9 +1,9 @@
 class Api::V1::SectionsController < ApplicationController
   def create
     puts "%%%%%%%%%#{params}%%%%%%%%%%"
-    case params[:title]
-      when "Blank Section"
-        puts "%%%%%%%%%#{params[:title]}%%%%%%%%%%"
+    case params[:key]
+    when "M1"
+        puts "%%%%%%%%%#{params[:key]}%%%%%%%%%%"
         # byebug
         section_sequence = Section.find(params[:section].to_i).sequence - 1
         new_section = Section.create(sequence:section_sequence,site_id:params[:site])

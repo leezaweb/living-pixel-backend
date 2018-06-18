@@ -23,6 +23,16 @@ class Api::V1::SectionsController < ApplicationController
     end
   end
 
+  def update
+    section = Section.find(params[:id])
+    # byebug
+    if params[:background_image]
+      section.section_style.update(background_image: params[:background_image])
+      section.section_style.background_image = "url('#{params[:background_image]}')"
+      section.section_style.save
+      section.save!
+    end
+  end
 
   def index
     element_style_ids = ElementStyle.all.map{|x|x.element_id}

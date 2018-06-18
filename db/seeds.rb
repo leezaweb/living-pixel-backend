@@ -391,7 +391,7 @@ BodyStyle.create(
 )
 
 template1_header = Header.create(
-  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Template 1 Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
   site_id: template1_site.id
 )
 
@@ -420,7 +420,7 @@ FooterStyle.create(
 
 )
 
-template1_section = Section.create(sequence:1,site_id:template1_site)
+template1_section = Section.create(sequence:1,site_id:template1_site.id)
 
 template1_style = SectionStyle.create(section_id:template1_section.id)
 initAttr(template1_style)
@@ -447,7 +447,7 @@ BodyStyle.create(
 )
 
 template2_header = Header.create(
-  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Template 2 Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
   site_id: template2_site.id
 )
 
@@ -476,7 +476,7 @@ FooterStyle.create(
 
 )
 
-template2_section = Section.create(sequence:1,site_id:template2_site)
+template2_section = Section.create(sequence:1,site_id:template2_site.id)
 
 template2_style = SectionStyle.create(section_id:template2_section.id)
 initAttr(template2_style)
@@ -503,7 +503,7 @@ BodyStyle.create(
 )
 
 template3_header = Header.create(
-  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Template 3 Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
   site_id: template3_site.id
 )
 
@@ -532,7 +532,7 @@ FooterStyle.create(
 
 )
 
-template3_section = Section.create(sequence:1,site_id:template3_site)
+template3_section = Section.create(sequence:1,site_id:template3_site.id)
 
 template3_style = SectionStyle.create(section_id:template3_section.id)
 initAttr(template3_style)
@@ -559,7 +559,7 @@ BodyStyle.create(
 )
 
 template4_header = Header.create(
-  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Template 4 Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
   site_id: template4_site.id
 )
 
@@ -588,7 +588,7 @@ FooterStyle.create(
 
 )
 
-template4_section = Section.create(sequence:1,site_id:template4_site)
+template4_section = Section.create(sequence:1,site_id:template4_site.id)
 
 template4_style = SectionStyle.create(section_id:template4_section.id)
 initAttr(template4_style)
@@ -615,7 +615,7 @@ BodyStyle.create(
 )
 
 template5_header = Header.create(
-  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Template 5 Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
   site_id: template5_site.id
 )
 
@@ -644,7 +644,7 @@ FooterStyle.create(
 
 )
 
-template5_section = Section.create(sequence:1,site_id:template5_site)
+template5_section = Section.create(sequence:1,site_id:template5_site.id)
 
 template5_style = SectionStyle.create(section_id:template5_section.id)
 initAttr(template5_style)
@@ -671,7 +671,7 @@ BodyStyle.create(
 )
 
 template6_header = Header.create(
-  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
+  inner_text:'{"entityMap":{},"blocks":[{"key":"4oah6","text":"My Template 6 Site Header","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[]}]}',
   site_id: template6_site.id
 )
 
@@ -700,7 +700,9 @@ FooterStyle.create(
 
 )
 
-template6_section = Section.create(sequence:1,site_id:template6_site)
+template6_section = Section.create(sequence:1,site_id:template6_site.id)
 
 template6_style = SectionStyle.create(section_id:template6_section.id)
 initAttr(template6_style)
+
+Site.first.dup

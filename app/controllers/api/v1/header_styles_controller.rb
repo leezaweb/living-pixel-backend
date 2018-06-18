@@ -10,10 +10,10 @@ class Api::V1::HeaderStylesController < ApplicationController
 
   def update
     header_style = HeaderStyle.find(params[:id])
-    params.reject{|k|["controller", "action","id","header_style","editorState"].include?(k)}.each do |k,v|
+    params.reject{|k|["controller", "action","id","header_style","editorState"].include?(k)}.each do |k|
       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{k}"
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{v}"
-      header_style[k] = v
+      
+      header_style[k[0].to_sym] = params[k[0]]
       header_style.save
     end
   end

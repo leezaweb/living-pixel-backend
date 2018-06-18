@@ -6,11 +6,19 @@ class Api::V1::ElementsController < ApplicationController
   def update
     puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{params[:inner_text]}"
     element = Element.find(params[:id])
-    element.update(inner_text: params[:inner_text])
-    element.inner_text = params[:inner_text]
-    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{element.inspect}"
-    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{Element.count}"
-    element.save!
+
+    if params[:inner_text]
+      element.update(inner_text: params[:inner_text])
+      element.inner_text = params[:inner_text]
+      element.save!
+    end
+
+    if params[:src]
+      element.update(src: params[:src])
+      element.src = params[:src]
+      element.save!
+    end
+
   end
 
 
@@ -29,7 +37,7 @@ class Api::V1::ElementsController < ApplicationController
             new_element.save
             section = Section.find(params[:section].to_i)
 
-            last_row_element = section.elements.max_by{|e|e.element_style.grid_row_end} 
+            last_row_element = section.elements.max_by{|e|e.element_style.grid_row_end}
             last_row = last_row_element ? last_row_element.element_style.grid_row_end : -1
 
 

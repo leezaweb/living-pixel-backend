@@ -10,10 +10,10 @@ class Api::V1::FooterStylesController < ApplicationController
 
   def update
     footer_style = FooterStyle.find(params[:id])
-    params.reject{|k|["controller", "action","id","footer_style","editorState"].include?(k)}.each do |k,v|
+    params.reject{|k|["controller", "action","id","footer_style","editorState"].include?(k)}.each do |k|
       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{k}"
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{v}"
-      footer_style[k] = v
+
+      footer_style[k[0].to_sym] = params[k[0]]
       footer_style.save
     end
   end

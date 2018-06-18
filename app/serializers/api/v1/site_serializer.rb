@@ -18,5 +18,5 @@ class Api::V1::SiteSerializer < ActiveModel::Serializer
   has_one :header, serializer: HeaderSerializer
   has_one :footer, serializer: FooterSerializer
 
-  attributes :id, :url, :title, :version, :created_at, :updated_at
+  attributes :id, :key, :url, :title, :version, :created_at, :updated_at
 end

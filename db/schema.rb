@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_17_232210) do
+ActiveRecord::Schema.define(version: 2018_06_20_140621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 2018_06_17_232210) do
     t.string "background_position"
     t.string "justify_content"
     t.string "align_content"
+    t.integer "min_height"
     t.index ["section_id"], name: "index_section_styles_on_section_id"
   end
 

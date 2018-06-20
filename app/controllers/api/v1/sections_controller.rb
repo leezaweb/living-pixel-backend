@@ -5,7 +5,12 @@ class Api::V1::SectionsController < ApplicationController
     when "M7"
         puts "%%%%%%%%%#{params[:key]}%%%%%%%%%%"
         # byebug
-        section_sequence = Section.find(params[:section].to_i).sequence - 1
+        if params[:section]
+          section_sequence = Section.find(params[:section].to_i).sequence - 1
+        else
+          section_sequence = 0
+        end
+
         new_section = Section.create(sequence:section_sequence,site_id:params[:site])
 
         new_style = SectionStyle.create(section_id:new_section.id)
@@ -13,10 +18,14 @@ class Api::V1::SectionsController < ApplicationController
         new_style.attributes.reject{|k|["id", "section_id"].include?(k)}.each do |attribute|
 
           if attribute[0].include?("width") || attribute[0].include?("radius")
-            new_style[attribute[0]] = 0
+            new_style[attribute[0].to_sym] = 0
+            new_style.save
+          elsif attribute[0].include?("height")
+          # byebug
+            new_style[attribute[0].to_sym] = 50
             new_style.save
           else
-            new_style[attribute[0]] = ""
+            new_style[attribute[0].to_sym] = ""
             new_style.save
           end
       end

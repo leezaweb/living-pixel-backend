@@ -8,6 +8,7 @@ class Api::V1::ElementsController < ApplicationController
     element = Element.find(params[:id])
 
     if params[:inner_text]
+      # byebug
       element.update(inner_text: params[:inner_text])
       element.inner_text = params[:inner_text]
       element.save!

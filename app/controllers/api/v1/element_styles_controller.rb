@@ -16,7 +16,7 @@ class Api::V1::ElementStylesController < ApplicationController
         element_style[k.sub("style","width").to_sym]=0
         element_style.save
       end
-      element_style.update!(background_size:"") if k.include?("background_repeat") && params[k]=="repeat"
+
       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{k[0].to_sym}"
       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#{params[k]}"
       element_style[k[0].to_sym] = params[k[0]]

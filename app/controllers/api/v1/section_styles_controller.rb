@@ -13,7 +13,12 @@ class Api::V1::SectionStylesController < ApplicationController
       if k.include?("border") && k.include?("style") && params[k]=="none"
         section_style[k.sub("style","width")]=0
       end
-      section_style.background_size="" if k.include?("background_repeat") && params[k]=="repeat"
+
+      if k[0].include?("background_repeat") && !params[k[0]].include?("no")
+        # byebug
+        section_style.update!(background_size:"25%")
+      end
+
       section_style[k[0].to_sym] = params[k[0]]
       section_style.save
     end

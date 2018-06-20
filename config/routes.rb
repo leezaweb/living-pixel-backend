@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      get 'published-sites/:url' => 'sites#published', :as => 'published'
+      resources :sites
       resources :body_styles
       resources :body
       resources :element_styles
@@ -12,7 +14,6 @@ Rails.application.routes.draw do
       resources :section_elements
       resources :section_styles
       resources :sections
-      resources :sites
       resources :teams
       resources :users
     end

@@ -21,23 +21,31 @@ class Site < ApplicationRecord
 
 
   def dup
+    new_element = nil
     super.tap do |new_thing|
 
       self.sections.each do |section|
         new_section = section.dup
         new_section.section_style = section.section_style.dup
+
+        new_section.site_id = new_thing.id
         new_section.save
+
+        new_thing.sections << new_section
+
 
         section.elements.each do |element|
           new_element = element.dup
-          new_element.save
 
-          new_section.elements << new_element
-          new_section.site_id = new_thing.id
-          new_section.save
+
+          new_element.sections = [new_section]
+          new_element.save
         end
 
-        new_thing.sections << new_section
+
+        new_section.elements << new_element
+        new_section.save
+
         new_thing.save
       end
 

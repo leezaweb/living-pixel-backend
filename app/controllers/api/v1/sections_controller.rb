@@ -2,7 +2,7 @@ class Api::V1::SectionsController < ApplicationController
   def create
     puts "%%%%%%%%%#{params}%%%%%%%%%%"
     case params[:key]
-    when "M1"
+    when "M7"
         puts "%%%%%%%%%#{params[:key]}%%%%%%%%%%"
         # byebug
         section_sequence = Section.find(params[:section].to_i).sequence - 1
@@ -25,13 +25,23 @@ class Api::V1::SectionsController < ApplicationController
 
   def update
     section = Section.find(params[:id])
-    # byebug
+
+    if params[:over]
+      over = Section.find(params[:over])
+      # byebug
+      section.update!(sequence: over.sequence - 1)
+
+    end
+
     if params[:background_image]
       section.section_style.update(background_image: params[:background_image])
       section.section_style.background_image = "url('#{params[:background_image]}')"
       section.section_style.save
       section.save!
     end
+
+
+
   end
 
   def index

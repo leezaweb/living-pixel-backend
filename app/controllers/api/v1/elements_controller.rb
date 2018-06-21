@@ -36,6 +36,7 @@ class Api::V1::ElementsController < ApplicationController
 
             new_element = element.dup
             new_element.save
+            new_element.update!(key:"")
             section = Section.find(params[:section].to_i)
 
             last_row_element = section.elements.max_by{|e|e.element_style.grid_row_end}

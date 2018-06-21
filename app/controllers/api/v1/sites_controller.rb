@@ -12,7 +12,7 @@ class Api::V1::SitesController < ApplicationController
   def update
     site = Site.find(params[:id])
 
-    if params[:key] && params[:site]
+    if params[:key] && params[:site] && [27,26,25,24,23,10,11].none?{|n|n==params[:site]}
       current_site = Site.find(params[:site].to_i)
       key_site = Site.find_by(key: params[:key])
 
@@ -77,10 +77,10 @@ class Api::V1::SitesController < ApplicationController
   end
 
   def show
-    element_style_ids = ElementStyle.all.map{|x|x.element_id}
-    Element.all.each do |y|
-      y.destroy if !element_style_ids.include?(y.id)
-    end
+    # element_style_ids = ElementStyle.all.map{|x|x.element_id}
+    # Element.all.each do |y|
+    #   y.destroy if !element_style_ids.include?(y.id)
+    # end
     render json: Site.find(params[:id])
   end
 

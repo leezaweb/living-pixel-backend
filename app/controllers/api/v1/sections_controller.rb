@@ -2,6 +2,38 @@ class Api::V1::SectionsController < ApplicationController
   def create
     puts "%%%%%%%%%#{params}%%%%%%%%%%"
     case params[:key]
+    when "M1","M2","M3","M4","M5","M6"
+      section = Section.find_by(key: params[:key])
+
+      new_section = section.dup
+      new_section.section_style = section.section_style.dup
+
+      new_section.update!(site_id: params[:site].to_i)
+
+      new_element = nil
+
+      section.elements.each do |element|
+        new_element = element.dup
+
+
+        new_element.sections = [new_section]
+        new_element.save
+      end
+
+
+      new_section.elements << new_element
+
+      if params[:section]
+        section_sequence = Section.find(params[:section].to_i).sequence - 1
+      else
+        section_sequence = 0
+      end
+      new_section.update!(sequence:section_sequence,key:"")
+
+
+
+
+      new_section.save
     when "M7"
         puts "%%%%%%%%%#{params[:key]}%%%%%%%%%%"
         # byebug

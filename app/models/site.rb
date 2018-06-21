@@ -76,7 +76,7 @@ class Site < ApplicationRecord
 
 
 
-
+      new_thing.update!(key:"")
       new_thing.save
 
 

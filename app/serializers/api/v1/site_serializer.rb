@@ -13,10 +13,10 @@ class Api::V1::SiteSerializer < ActiveModel::Serializer
   # has_one :footer_style, through: :footer
 
   # has_many :teams, serializer: TeamSerializer
-  has_many :sections, serializer: SectionSerializer
-  has_one :body, serializer: BodySerializer
-  has_one :header, serializer: HeaderSerializer
-  has_one :footer, serializer: FooterSerializer
+  has_many :sections, serializer: Api::V1::SectionSerializer
+  has_one :body, serializer: Api::V1::BodySerializer
+  has_one :header, serializer: Api::V1::HeaderSerializer
+  has_one :footer, serializer: Api::V1::FooterSerializer
 
   attributes :id, :key, :url, :title, :version, :created_at, :updated_at
 end

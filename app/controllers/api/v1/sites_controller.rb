@@ -11,7 +11,7 @@ class Api::V1::SitesController < ApplicationController
 
   def update
     site = Site.find(params[:id])
-
+# byebug
     if params[:key] && params[:site] && [27,26,25,24,23,10,11].none?{|n|n==params[:site]}
       current_site = Site.find(params[:site].to_i)
       key_site = Site.find_by(key: params[:key])

@@ -1,1 +1,1 @@
-Gallery for showcasing, rating, and adding visual artists behind album cover art
+Content Management Site (CMS) with single-page hosting and drag and drop components
